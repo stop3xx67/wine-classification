@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
+import joblib
 
 wine = load_wine(as_frame=True)
 
@@ -65,3 +66,5 @@ print(accuracy_score(y_pred=y_prediction, y_true=y_test))
 print(accuracy_score(y_pred=y_prediction2, y_true=y_train))
 
 print(confusion_matrix(y_pred=y_prediction2, y_true=y_train))
+
+joblib.dump(model_logistic, "model.pkl")
