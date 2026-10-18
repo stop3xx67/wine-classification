@@ -4,7 +4,7 @@ import pandas as pd
 
 model = joblib.load(Path(__file__).parent / "model.pkl")
 
-df = pd.read_csv(Path(__file__).parent / "wine.csv")
+df = pd.read_csv(Path(__file__).parent / "new_wine.csv")
 
-pred = model.predict(df.head(130).drop(columns=["target"]))
+pred = model.predict(df)
 print(pred)
